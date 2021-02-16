@@ -1,0 +1,73 @@
+version: '3.7'
+
+services:
+  ########################
+  # PSQL
+  ########################
+  postgres:
+    image: postgres:9.6
+    container_name: psql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    networks:
+      - airflow
+    logging:
+        options:
+            max-size: 10m
+            max-file: "3"
+
+  ########################
+  # AIRFLOW WEBSERVER
+  ########################
+  webserver:
+    image: puckel/docker-airflow:1.10.9
+    container_name: webserver
+    depends_on:
+      - postgres
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+    logging:
+        options:
+            max-size: 10m
+            max-file: "3"
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./plugins:/usr/local/airflow/plugins
+      - ./config/airflow.cfg:/usr/local/airflow/airflow.cfg
+    ports:
+      - "8080:8080"
+    command: webserver
+    networks:
+      - airflow
+    healthcheck:
+        test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
+
+  ########################
+  # PGADMIN
+  ########################
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${POSTGRES_USER}@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./pgadmin:/root/.pgadmin
+    ports:
+      - "5050:5050"
+    depends_on:
+      - postgres
+    networks:
+      - airflow
+
+networks:
+  airflow:
+    driver: bridge
