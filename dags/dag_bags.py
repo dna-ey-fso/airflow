@@ -6,8 +6,8 @@ from airflow.models import DagBag
 # DAG BAG Configuration path
 #################################
 dags_dirs = [
-    "~/dag_bag_block",
-    "~/dag_bag_par"
+    "~/par",
+    "~/single"
 ]
 
 
