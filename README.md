@@ -32,3 +32,13 @@ Access your DAG metadata from Airflow UI or PgAdmin.
 
 ### Airflow UI
 ![Alt text](./doc/img/airflow_query.png?raw=true)
+
+## Concepts
+- [Pool](https://github.com/robincvlr/airflow/blob/main/dags/par/dag_pool_1.py)
+
+- [XCOM](https://github.com/robincvlr/airflow/blob/main/dags/par/dag_pool_1.py)
+
+- [SubDAG](https://github.com/robincvlr/airflow/blob/main/dags/single/dag_single_sub_2.py)
+
+- [DAGBags](https://github.com/robincvlr/airflow/blob/main/dags/dag_bags.py)
+
