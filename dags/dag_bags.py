@@ -6,9 +6,11 @@ from airflow.models import DagBag
 # DAG BAG Configuration path
 #################################
 dags_dirs = [
-    "~/par",
-    "~/single",
-    "~/templates"
+    "~/parallel",
+    "~/sequential",
+    "~/templates",
+    "~/triggers",
+    "~/sensors"
 ]
 
 

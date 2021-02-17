@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.subdag_operator import SubDagOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.utils.dates import days_ago
-from single.dag_single_sub_2 import subdag
+from sequential.dag_single_sub_2 import subdag
 
 
 DAG_NAME = "single_dag_example_2"
