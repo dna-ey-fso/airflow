@@ -14,7 +14,7 @@ args = {
 
 
 dag = DAG(
-    dag_id=DAG_NAME, default_args=args, start_date=days_ago(1), schedule_interval="@once"
+    dag_id=DAG_NAME, default_args=args, start_date=days_ago(1), schedule_interval='@once'
 )
 
 
