@@ -62,7 +62,7 @@ services:
     volumes:
       - ./pgadmin:/root/.pgadmin
     ports:
-      - "5050:5050"
+      - "5050:80"
     depends_on:
       - postgres
     networks:
