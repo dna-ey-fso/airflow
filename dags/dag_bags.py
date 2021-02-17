@@ -7,7 +7,8 @@ from airflow.models import DagBag
 #################################
 dags_dirs = [
     "~/par",
-    "~/single"
+    "~/single",
+    "~/templates"
 ]
 
 
