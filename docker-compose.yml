@@ -31,6 +31,7 @@ services:
     environment:
       - LOAD_EX=n
       - EXECUTOR=Local
+      - PYTHONPATH=/usr/local/airflow/conf/
     logging:
         options:
             max-size: 10m
@@ -38,7 +39,9 @@ services:
     volumes:
       - ./dags:/usr/local/airflow/dags
       - ./plugins:/usr/local/airflow/plugins
-      - ./config/airflow.cfg:/usr/local/airflow/airflow.cfg
+      - ./airflow.cfg:/usr/local/airflow/airflow.cfg
+      - ./conf:/usr/local/airflow/conf/
+      - ./logs:/usr/local/airflow/logs/
     ports:
       - "8080:8080"
     command: webserver
