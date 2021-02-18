@@ -46,3 +46,5 @@ Access your DAG metadata from Airflow UI or PgAdmin.
 
 - [Templates](https://github.com/robincvlr/airflow/blob/main/dags/templates)
 
+- [Logging](https://github.com/robincvlr/airflow/blob/main/conf/log_config.py)
+
