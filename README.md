@@ -34,21 +34,21 @@ Access your DAG metadata from Airflow UI or PgAdmin.
 ![Alt text](./doc/img/airflow_query.png?raw=true)
 
 ## Concepts
-- [Pool](https://github.com/robincvlr/airflow/blob/main/dags/parallel/dag_pool_1.py)
+- [Pool](https://github.com/robincvlr/airflow/blob/main/dags/parallel/dag_pool_1.py): limit the execution parallelism on arbitrary sets of tasks
 
-- [XCOM](https://github.com/robincvlr/airflow/blob/main/dags/parallel/dag_pool_1.py)
+- [XCOM](https://github.com/robincvlr/airflow/blob/main/dags/parallel/dag_pool_1.py): exchange messages between tasks
 
-- [SubDAG](https://github.com/robincvlr/airflow/blob/main/dags/sequential/dag_single_sub_2.py)
+- [SubDAG](https://github.com/robincvlr/airflow/blob/main/dags/sequential/dag_single_sub_2.py): Create a subDAGs, a smaller unit of process
 
-- [DAGBags](https://github.com/robincvlr/airflow/blob/main/dags/dag_bags.py)
+- [DAGBags](https://github.com/robincvlr/airflow/blob/main/dags/dag_bags.py): Manage your dags with modules
 
-- [Triggers](https://github.com/robincvlr/airflow/blob/main/dags/triggers/)
+- [Triggers](https://github.com/robincvlr/airflow/blob/main/dags/triggers/): Trigger a DAG from another
 
-- [Templates](https://github.com/robincvlr/airflow/blob/main/dags/templates)
+- [Templates](https://github.com/robincvlr/airflow/blob/main/dags/templates): How to use Airflow templating
 
-- [Logging](https://github.com/robincvlr/airflow/blob/main/conf/log_config.py)
+- [Logging](https://github.com/robincvlr/airflow/blob/main/conf/log_config.py): How to configure logging and monitor Airflow
 
 ## Not covered
 - Security
 - Scalability with Celery
-- Scalability using KEDA
+- Queueing using KEDA
