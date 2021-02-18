@@ -51,3 +51,4 @@ Access your DAG metadata from Airflow UI or PgAdmin.
 ## Not covered
 - Security
 - Scalability with Celery
+- Scalability using KEDA
