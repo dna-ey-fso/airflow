@@ -48,3 +48,6 @@ Access your DAG metadata from Airflow UI or PgAdmin.
 
 - [Logging](https://github.com/robincvlr/airflow/blob/main/conf/log_config.py)
 
+## Not covered
+- Security
+- Scalability with Celery
